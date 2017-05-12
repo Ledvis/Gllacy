@@ -2,8 +2,6 @@ var body = document.querySelector("body");
 var green = document.querySelector(".green-toggle");
 var purple = document.querySelector(".purple-toggle");
 var brown = document.querySelector(".brown-toggle");
-var catalogLink = document.querySelector(".catalog-menu");
-var catalogPopup = document.querySelector(".catalog-popup");
 var searchLink = document.querySelector(".user-search");
 var searchPopup = document.querySelector(".search-popup");
 var enterLink = document.querySelector(".user-enter");
@@ -49,23 +47,6 @@ brown.addEventListener("click", function (event) {
 	green.classList.remove("active-toggle");
 });
 
-catalogLink.addEventListener("click", function (event) {
-	event.preventDefault();
-	if (catalogPopup.classList.contains("catalog-popup-show")) {
-		catalogPopup.classList.remove("catalog-popup-show");
-		catalogLink.classList.remove("active-item-popup");
-	} else {
-		catalogPopup.classList.add("catalog-popup-show");
-		catalogLink.classList.add("active-item-popup");
-		searchPopup.classList.remove("search-popup-show");
-		searchLink.classList.remove("active-item-popup");
-		enterPopup.classList.remove("enter-popup-show");
-		enterLink.classList.remove("active-item-popup");
-		cartPopup.classList.remove("cart-popup-show");
-		cartLink.classList.remove("active-item-popup");
-	}
-});
-
 searchLink.addEventListener("click", function (event) {
 	event.preventDefault();
 	if (searchPopup.classList.contains("search-popup-show")) {
@@ -74,8 +55,6 @@ searchLink.addEventListener("click", function (event) {
 	} else {
 		searchPopup.classList.add("search-popup-show");
 		searchLink.classList.add("active-item-popup");
-		catalogPopup.classList.remove("catalog-popup-show");
-		catalogLink.classList.remove("active-item-popup");
 		enterPopup.classList.remove("enter-popup-show");
 		enterLink.classList.remove("active-item-popup");
 		cartPopup.classList.remove("cart-popup-show");
@@ -91,8 +70,6 @@ enterLink.addEventListener("click", function (event) {
 	} else {
 		enterPopup.classList.add("enter-popup-show");
 		enterLink.classList.add("active-item-popup");
-		catalogPopup.classList.remove("catalog-popup-show");
-		catalogLink.classList.remove("active-item-popup");
 		searchPopup.classList.remove("search-popup-show");
 		searchLink.classList.remove("active-item-popup");
 		cartPopup.classList.remove("cart-popup-show");
@@ -107,8 +84,6 @@ cartLink.addEventListener("click", function (event) {
 	} else {
 		cartPopup.classList.add("cart-popup-show");
 		cartLink.classList.add("active-item-popup");
-		catalogPopup.classList.remove("catalog-popup-show");
-		catalogLink.classList.remove("active-item-popup");
 		enterPopup.classList.remove("enter-popup-show");
 		enterLink.classList.remove("active-item-popup");
 		searchPopup.classList.remove("search-popup-show");
