@@ -7,13 +7,17 @@ var catalogPopup = document.querySelector(".catalog-popup");
 var searchLink = document.querySelector(".user-search");
 var searchPopup = document.querySelector(".search-popup");
 var enterLink = document.querySelector(".user-enter");
-var eneterPopup = document.querySelector(".enter-popup");
+var enterPopup = document.querySelector(".enter-popup");
 var cartLink = document.querySelector(".user-cart");
 var cartPopup = document.querySelector(".cart-popup");
 var link = document.querySelector(".link");
 var formPopup = document.querySelector(".form-popup");
 var formClose = formPopup.querySelector(".form-popup-close");
 var overlay = document.querySelector(".overlay");
+var login = formPopup.querySelector("[name=name]");
+var password = formPopup.querySelector("[name=email]");
+var form = formPopup.querySelector("form");
+var storage = localStorage.getItem("login");
 
 green.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -47,32 +51,81 @@ brown.addEventListener("click", function (event) {
 
 catalogLink.addEventListener("click", function (event) {
 	event.preventDefault();
-	catalogPopup.classList.toggle("catalog-popup-show");
-	catalogLink.classList.toggle("active-item-menu");
+	if (catalogPopup.classList.contains("catalog-popup-show")) {
+		catalogPopup.classList.remove("catalog-popup-show");
+		catalogLink.classList.remove("active-item-popup");
+	} else {
+		catalogPopup.classList.add("catalog-popup-show");
+		catalogLink.classList.add("active-item-popup");
+		searchPopup.classList.remove("search-popup-show");
+		searchLink.classList.remove("active-item-popup");
+		enterPopup.classList.remove("enter-popup-show");
+		enterLink.classList.remove("active-item-popup");
+		cartPopup.classList.remove("cart-popup-show");
+		cartLink.classList.remove("active-item-popup");
+	}
 });
 
 searchLink.addEventListener("click", function (event) {
 	event.preventDefault();
-	searchPopup.classList.toggle("search-popup-show");
-	searchLink.classList.toggle("user-active");
+	if (searchPopup.classList.contains("search-popup-show")) {
+		searchPopup.classList.remove("search-popup-show");
+		searchLink.classList.remove("active-item-popup");
+	} else {
+		searchPopup.classList.add("search-popup-show");
+		searchLink.classList.add("active-item-popup");
+		catalogPopup.classList.remove("catalog-popup-show");
+		catalogLink.classList.remove("active-item-popup");
+		enterPopup.classList.remove("enter-popup-show");
+		enterLink.classList.remove("active-item-popup");
+		cartPopup.classList.remove("cart-popup-show");
+		cartLink.classList.remove("active-item-popup");
+	}
 });
 
 enterLink.addEventListener("click", function (event) {
 	event.preventDefault();
-	eneterPopup.classList.toggle("search-popup-show");
-	enterLink.classList.toggle("user-active");
+	if (enterPopup.classList.contains("enter-popup-show")) {
+		enterPopup.classList.remove("enter-popup-show");
+		enterLink.classList.remove("active-item-popup");
+	} else {
+		enterPopup.classList.add("enter-popup-show");
+		enterLink.classList.add("active-item-popup");
+		catalogPopup.classList.remove("catalog-popup-show");
+		catalogLink.classList.remove("active-item-popup");
+		searchPopup.classList.remove("search-popup-show");
+		searchLink.classList.remove("active-item-popup");
+		cartPopup.classList.remove("cart-popup-show");
+		cartLink.classList.remove("active-item-popup");
+	}
 });
 
 cartLink.addEventListener("click", function (event) {
-	event.preventDefault();
-	cartPopup.classList.toggle("cart-popup-show");
-	cartLink.classList.toggle("user-active");
+	if (cartPopup.classList.contains("cart-popup-show")) {
+		cartPopup.classList.remove("cart-popup-show");
+		cartLink.classList.remove("active-item-popup");
+	} else {
+		cartPopup.classList.add("cart-popup-show");
+		cartLink.classList.add("active-item-popup");
+		catalogPopup.classList.remove("catalog-popup-show");
+		catalogLink.classList.remove("active-item-popup");
+		enterPopup.classList.remove("enter-popup-show");
+		enterLink.classList.remove("active-item-popup");
+		searchPopup.classList.remove("search-popup-show");
+		searchLink.classList.remove("active-item-popup");
+	}
 });
 
 link.addEventListener("click", function (event) {
 	event.preventDefault();
 	formPopup.classList.add("form-popup-show");
 	overlay.classList.add("overlay-show");
+	if (storage) {
+		storage = login.value;
+		login.focus();
+	} else {
+		password.focus();
+	}
 });
 
 formClose.addEventListener("click", function (event) {
@@ -87,5 +140,14 @@ window.addEventListener("keydown", function (event) {
 			formPopup.classList.remove("form-popup-show");
 			overlay.classList.remove("overlay-show");
 		}
+	}
+})
+
+form.addEventListener("submit", function (event) {
+	if (!login.value || !password.value) {
+		event.preventDefault();
+		formPopup.classList.add("form-popup-error");
+	} else {
+		localStorage.setItem("login", login.value);
 	}
 })
