@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Catalog</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="style/normalize.min.css">
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/style.min.css">
 </head>
 
 <body class="green-bg inner-page">
@@ -53,14 +53,14 @@
 		<div class="cart-popup">
 			<div class="cart-popup-list">
 				<button type="button" class="cart-popup-close"></button>
-				<span>Пломбир с апельсиновым джемом</span>
-				<span>1,5 кг <span class="cart-popup-inner">х 200 руб.</span></span>
+				<span class="popup-list-title">Пломбир с апельсиновым джемом</span>
+				<span>1,5 кг <span class="popup-list-inner">х 200 руб.</span></span>
 				<span>300 руб.</span>
 			</div>
 			<div class="cart-popup-list">
 				<button type="button" class="cart-popup-close"></button>
-				<span>Клубничный пломбир с присыпкой из белого шоколада</span>
-				<span>1,5 кг <span class="cart-popup-inner">х 300 руб.</span></span>
+				<span class="popup-list-title">Клубничный пломбир с присыпкой из белого шоколада</span>
+				<span>1,5 кг <span class="popup-list-inner">х 300 руб.</span></span>
 				<span>450 руб.</span>
 			</div>
 			<span>Итого:750 руб.</span>
@@ -127,27 +127,27 @@
 				<div class="left">
 					<div class="checkbox">
 						<label for="checkbox-1">
-							<input type="checkbox" name="" id="checkbox-1">
+							<input type="checkbox" name="шоколадные" id="checkbox-1">
 							<span class="indicator"></span>
 							шоколадные
 						</label>
 						<label for="checkbox-2">
-							<input type="checkbox" name="" id="checkbox-2">
+							<input type="checkbox" name="сахарные присыпки" id="checkbox-2">
 							<span class="indicator"></span>
 							сахарные присыпки
 						</label>
 						<label for="checkbox-3">
-							<input type="checkbox" name="" id="checkbox-3">
+							<input type="checkbox" name="фрукты" id="checkbox-3">
 							<span class="indicator"></span>
 							фрукты
 						</label>
 						<label for="checkbox-4">
-							<input type="checkbox" name="" id="checkbox-4">
+							<input type="checkbox" name="сиропы" id="checkbox-4">
 							<span class="indicator"></span>
 							сиропы
 						</label>
 						<label for="checkbox-5">
-							<input type="checkbox" name="" id="checkbox-5">
+							<input type="checkbox" name="джемы" id="checkbox-5">
 							<span class="indicator"></span>
 							джемы
 						</label>
@@ -167,7 +167,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-2.jpg" alt="">
+					<img src="img/catalog-item-2.jpg" alt="" width="268" height="267">
 					<figcaption>380&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочно-кофейное с кусочками шоколада</p>
@@ -175,7 +175,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-3.jpg" alt="">
+					<img src="img/catalog-item-3.jpg" alt="" width="268" height="267">
 					<figcaption>355&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочно-клубничное с присыпкой из белого шоколада</p>
@@ -183,7 +183,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-4.jpg" alt="">
+					<img src="img/catalog-item-4.jpg" alt="" width="268" height="267">
 					<figcaption>415&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочное крем-брюле с карамельной подливкой</p>
@@ -199,7 +199,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-6.jpg" alt="">
+					<img src="img/catalog-item-6.jpg" alt="" width="268" height="267">
 					<figcaption>410&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочно-черничное с цельными ягодами черники</p>
@@ -207,7 +207,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-7.jpg" alt="">
+					<img src="img/catalog-item-7.jpg" alt="" width="268" height="267">
 					<figcaption>375&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочно-лимонное с карамельной присыпкой</p>
@@ -215,7 +215,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-8.jpg" alt="">
+					<img src="img/catalog-item-8.jpg" alt="" width="268" height="267">
 					<figcaption>320&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочное с шоколадной стружкой</p>
@@ -231,7 +231,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-10.jpg" alt="">
+					<img src="img/catalog-item-10.jpg" alt="" width="268" height="267">
 					<figcaption>435&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочноe с ментоловым сиропом</p>
@@ -239,7 +239,7 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-11.jpg" alt="">
+					<img src="img/catalog-item-11.jpg" alt="" width="268" height="267">
 					<figcaption>355&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочное с кусочками черного шоколада</p>
@@ -247,20 +247,24 @@
 			</article>
 			<article class="catalog-item">
 				<figure>
-					<img src="img/catalog-item-12.jpg" alt="">
+					<img src="img/catalog-item-12.jpg" alt="" width="268" height="267">
 					<figcaption>420&#8381;<span>/кг</span></figcaption>
 				</figure>
 				<p>Сливочное с мятным сиропом</p>
 				<a class="btn" href="#">Быстрый просмотр</a>
 			</article>
 			<ul class="pagination">
-				<a class="arrow-left arrow-active" href="#"></a>
+				<li>
+					<a class="arrow-left arrow-active" href="#"></a>
+				</li>
 				<li><span class="active">1</span></li>
 				<li><a href="#">2</a></li>
 				<li><a href="#">3</a></li>
 				<li><a href="#">4</a></li>
 				<li><a href="#">5</a></li>
-				<a class="arrow-right" href="#"></a>
+				<li>
+					<a class="arrow-right" href="#"></a>
+				</li>
 			</ul>
 		</section>
 	</main>
@@ -288,6 +292,6 @@
 			<span>Сделано в <a href="https://htmlacademy.ru/" target="_blank">HTML Academy</a> &copy; 2016</span>
 		</div>
 	</footer>
-	<script src="script/script-2.js"></script>
+	<script src="script/script-2.min.js"></script>
 </body>
 </html>

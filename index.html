@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Gllacy</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="style/normalize.min.css">
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/style.min.css">
 </head>
 
 <body class="green-bg">
@@ -34,11 +34,10 @@
 			</nav>
 			<div class="user-section">
 				<span class="user-search"></span>
-				<a class="user-enter" href="#">Вход</a>
+				<a class="user-enter" href="#">Вход </a>
 				<a class="user-cart" href="#">Пусто</a>
 			</div>
 		</div>
-
 		<div class="search-popup">
 			<form action="#" method="post">
 				<input type="search" placeholder="Что ищем?">
@@ -56,14 +55,15 @@
 		<div class="cart-popup">
 			<div class="cart-popup-list">
 				<button type="button" class="cart-popup-close"></button>
-				<span>Пломбир с апельсиновым джемом</span>
-				<span>1,5 кг <span class="cart-popup-inner">х 200 руб.</span></span>
+				<span class="popup-list-title">Пломбир с апельсиновым джемом</span>
+				<span>1,5 кг <span class="popup-list-inner">х 200 руб.</span></span>
 				<span>300 руб.</span>
+				<button type="button" class="cart-popup-close"></button>
 			</div>
 			<div class="cart-popup-list">
 				<button type="button" class="cart-popup-close"></button>
-				<span>Клубничный пломбир с присыпкой из белого шоколада</span>
-				<span>1,5 кг <span class="cart-popup-inner">х 300 руб.</span></span>
+				<span class="popup-list-title">Клубничный пломбир с присыпкой из белого шоколада</span>
+				<span>1,5 кг <span class="popup-list-inner">х 300 руб.</span></span>
 				<span>450 руб.</span>
 			</div>
 			<span>Итого:750 руб.</span>
@@ -75,7 +75,7 @@
 			<section class="promo">
 				<span class="promo-schedule">С 10 до 20, ежедневно</span>
 				<span class="promo-number">8 812 450-25-25</span>
-				<span class="promo-title">Крем-брюле и пломбир с малиновым джемом</span>
+				<span class="promo-title">Крем-брюле и пломбир с малиновым джемом </span>
 				<a class="btn" href="#">Давайте оба!</a>
 				<span class="toggle green-toggle active-toggle"></span>
 				<span class="toggle purple-toggle"></span>
@@ -160,9 +160,9 @@
 			<img src="img/map.jpg" alt="" width="1200" height="430">
 			<div class="contacts">
 				<p>Адрес главного офиса и офлайн магазина:</p>
-				<p>ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+				<p class="contacts-adress">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
 				<p>Для заказов по телефону:</p>
-				<span>8 812 450-25-25</span>
+				<span class="contacts-number">8 812 450-25-25</span>
 				<span>(с 10 до 20 ежедневно)</span>
 				<a class="btn link" href="#">Форма обратной связи</a>
 			</div>
@@ -177,7 +177,7 @@
 		</div>
 		<div class="footer-info clearfix">
 			<div class="left">
-				<a href="#">Для поставщиков</a>
+				<a class="footer-info-producers" href="#">Для поставщиков</a>
 				<a href="#">О производстве</a>
 			</div>
 			<div class="right">
@@ -203,6 +203,6 @@
 		</form>
 	</div>
 	<div class="overlay"></div>
-	<script src="script/script.js"></script>
+	<script src="script/script.min.js"></script>
 </body>
 </html>

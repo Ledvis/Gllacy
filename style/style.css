@@ -20,14 +20,20 @@ body {
 
 .green-bg {
 	background: rgb(132, 157, 143);
+	-webkit-animation: body-1 0.6s;
+	animation: body-1 0.6s;
 }
 
 .purple-bg {
 	background: rgb(137, 150, 166);
+	-webkit-animation: body-2 0.6s;
+	animation: body-2 0.6s;
 }
 
 .brown-bg {
 	background: rgb(157, 139, 132);
+	-webkit-animation: body-3 0.6s;
+	animation: body-3 0.6s;
 }
 
 .green-bg::before,
@@ -55,11 +61,6 @@ body {
 .brown-bg::before {
 	background-image: url("../img/ice-cream-3.png");
 	background-repeat: no-repeat;
-}
-
-.body-animation {
-	-webkit-animation: translate linear 0.6s;
-	animation: translate linear 0.6s;
 }
 
 .clearfix::after {
@@ -112,6 +113,7 @@ header {
 
 .main-nav>ul>li {
 	display: inline-block;
+	vertical-align: top;
 	margin-right: 2px;
 	font-size: 16px;
 }
@@ -150,7 +152,6 @@ header span.active-item-popup {
 	color: rgb(255, 255, 255);
 	font-size: 14px;
 	font-weight: 500;
-	text-align: center;
 	text-decoration: none;
 	background-color: rgba(255, 255, 255, 0.2);
 }
@@ -174,13 +175,13 @@ header span.active-item-popup {
 .user-enter,
 .user-cart {
 	padding: 8px 0;
+	padding-left: 44px;
 	border-radius: 15px;
 }
 
 .user-enter {
 	width: 92px;
 	margin-right: 10px;
-	padding-left: 28px;
 	background-image: url(../img/enter-icon.svg);
 	background-repeat: no-repeat;
 	background-position: 16px center;
@@ -189,7 +190,7 @@ header span.active-item-popup {
 .user-cart {
 	width: 117px;
 	margin-right: 0;
-	padding-left: 10px;
+	text-align: left;
 	background-image: url(../img/cart-icon.svg);
 	background-repeat: no-repeat;
 	background-position: 16px center;
@@ -629,14 +630,14 @@ header span.active-item-popup {
 
 .contacts p:first-of-type,
 .contacts p:nth-of-type(3),
-.contacts span:nth-of-type(2) {
+.contacts span:last-of-type {
 	margin-bottom: 5px;
 	font-size: 14px;
 	line-height: 20px;
 }
 
-.contacts p:nth-of-type(2),
-.contacts span:nth-of-type(1) {
+.contacts-adress,
+.contacts-number {
 	margin-bottom: 16px;
 	font-size: 18px;
 	font-weight: 700;
@@ -715,11 +716,19 @@ footer a {
 	box-sizing: border-box;
 }
 
+.footer-info .left {
+	max-width: 120px;
+}
+
+.footer-info .right {
+	max-width: 170px;
+}
+
 .footer-info a {
 	display: block;
 }
 
-.footer-info .left a:first-of-type {
+.footer-info-producers {
 	font-weight: 700;
 }
 
@@ -729,7 +738,7 @@ footer a {
 	text-decoration: underline solid rgba(236, 89, 60, 0.3);
 }
 
-.footer-info a:first-child {
+.footer-info a:not(:last-child) {
 	margin-bottom: 8px;
 }
 
@@ -950,16 +959,6 @@ footer a {
 	display: block;
 }
 
-.cart-popup::before {
-	content: "";
-	position: absolute;
-	top: 137px;
-	right: 15px;
-	left: 15px;
-	height: 1px;
-	background-color: rgb(202, 202, 199);
-}
-
 .cart-popup-list {
 	position: relative;
 	margin-bottom: 20px;
@@ -967,7 +966,7 @@ footer a {
 	padding-left: 73px;
 }
 
-.cart-popup-list:nth-child(2) {
+.cart-popup-list:last-of-type {
 	margin-bottom: 30px;
 }
 
@@ -984,6 +983,16 @@ footer a {
 
 .cart-popup-list:nth-child(2)::before {
 	background: rgb(232, 127, 142) url("../img/ice-cream-small-2.jpg");
+}
+
+.cart-popup-list:last-of-type::after {
+	content: "";
+	position: absolute;
+	bottom: -18px;
+	left: 0;
+	width: 510px;
+	height: 1px;
+	background-color: rgb(202, 202, 199);
 }
 
 .cart-popup-close {
@@ -1022,11 +1031,11 @@ footer a {
 	vertical-align: top;
 }
 
-.cart-popup-inner {
+.popup-list-inner {
 	color: rgb(128, 128, 128);
 }
 
-.cart-popup-list span:first-of-type:not(.cart-popup-inner) {
+.popup-list-title {
 	max-width: 216px;
 	margin-right: 31px;
 }
@@ -1074,6 +1083,8 @@ footer a {
 
 .form-popup-show {
 	display: block;
+	-webkit-animation: form 0.6s;
+	animation: form 0.6s;
 }
 
 .form-popup-close {
@@ -1207,7 +1218,7 @@ footer a {
 	}
 }
 
-@keyframes translate {
+@-webkit-keyframes body-1 {
 	0% {
 		-webkit-transform: translateX(-1200px) scale(2);
 		transform: translateX(-1200px) scale(2);
@@ -1217,6 +1228,101 @@ footer a {
 		-webkit-transform: translateX(0) scale(1);
 		transform: translateX(0) scale(1);
 		opacity: 1;
+	}
+}
+
+@keyframes body-1 {
+	0% {
+		-webkit-transform: translateX(-1200px) scale(2);
+		transform: translateX(-1200px) scale(2);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) scale(1);
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes body-2 {
+	0% {
+		-webkit-transform: translateX(-1200px) scale(2);
+		transform: translateX(-1200px) scale(2);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) scale(1);
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes body-2 {
+	0% {
+		-webkit-transform: translateX(-1200px) scale(2);
+		transform: translateX(-1200px) scale(2);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) scale(1);
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes body-3 {
+	0% {
+		-webkit-transform: translateX(-1200px) scale(2);
+		transform: translateX(-1200px) scale(2);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) scale(1);
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes body-3 {
+	0% {
+		-webkit-transform: translateX(-1200px) scale(2);
+		transform: translateX(-1200px) scale(2);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) scale(1);
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes form {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes form {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 }
 
@@ -1579,12 +1685,13 @@ footer a {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.pagination li {
+.pagination li:not(:first-child):not(:last-child) {
 	display: inline-block;
+	vertical-align: top;
 	font-size: 16px;
 }
 
-.pagination li a,
+.pagination li:not(:first-child):not(:last-child) a,
 .pagination .active {
 	display: inline-block;
 	vertical-align: top;
@@ -1598,7 +1705,7 @@ footer a {
 	border-radius: 50%;
 }
 
-.pagination li a:hover {
+.pagination li:not(:first-child):not(:last-child) a:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
