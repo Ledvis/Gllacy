@@ -1579,6 +1579,16 @@ footer a {
 	transform: rotate(45deg);
 }
 
+.filter input:disabled~span {
+	color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 255, 255, 0.4);
+	cursor: default;
+}
+
+.filter input:disabled:hover+.indicator {
+	border-width: 1px;
+}
+
 .filter-submit {
 	width: 144px;
 	padding: 6px 2px;
