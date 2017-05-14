@@ -1724,3 +1724,17 @@ footer a {
 	color: rgb(53, 53, 53);
 	background-color: rgb(255, 255, 255);
 }
+
+.form-page {
+	background-color: rgb(132, 157, 143);
+}
+
+.form-page main {
+	padding: 30px 0;
+}
+
+.form-page .form-popup {
+	position: static;
+	display: block;
+	margin: 0 auto;
+}
